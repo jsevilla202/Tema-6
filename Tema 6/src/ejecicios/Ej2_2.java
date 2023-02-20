@@ -26,6 +26,10 @@ public class Ej2_2 {
 				System.out.print("*");
 			}
 		}
+		if(frase2.equals(frase1)) {
+			System.out.println("La adivinastes!!!!");
+			contraseña = false;
+		}
 		System.out.println();
 		}
 		sc.close();
