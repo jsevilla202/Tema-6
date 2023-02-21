@@ -9,7 +9,7 @@ public class Ej4 {
 		String esarf = "";
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("Introduzca una frase y el programa contara los espacios: ");
+		System.out.print("Introduzca una frase y el programa la mostrara al revés: ");
 		frase = sc.nextLine();
 		sc.close();
 		
