@@ -22,6 +22,7 @@ public class Ej5 {
 				fin = true;
 			}
 		}
+		sc.close();
 		
 		System.out.println("Su frase es: \n" + frase);
 

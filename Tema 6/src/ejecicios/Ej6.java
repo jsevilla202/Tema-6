@@ -16,6 +16,7 @@ public class Ej6 {
 		frase = sc.nextLine();
 		System.out.print("Inserte una palabra para buscar: ");
 		buscar = sc.next();
+		sc.close();
 		
 		palabras = frase.split(" ");
 		
