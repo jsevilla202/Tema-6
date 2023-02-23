@@ -24,18 +24,17 @@ public class Ej14 {
 		else {
 			letras = frase.toCharArray();
 			letrasrandom = new char [letras.length];
-			for(int i = 0; i<letras.length; i++) {
+			int i = 0;
+			while(i<letras.length) {
 				int azar = (int) (Math.random()*letras.length);
 				if(letrasrandom[azar] == 0) {
 					letrasrandom[azar] = letras[i];
-				}
-				else {
-					i--;
+					i++;
 				}
 			}
 			
-			for(int i = 0; i<letrasrandom.length; i++) {
-				esarf += letrasrandom[i];
+			for(int j = 0; j<letrasrandom.length; j++) {
+				esarf += letrasrandom[j];
 			}
 			
 			System.out.println(esarf);
