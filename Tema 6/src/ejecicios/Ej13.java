@@ -20,6 +20,7 @@ public class Ej13 {
 		String frase;
 		char palabras[];
 		int contador = 0;
+		boolean fuera = false;
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("Introduzca una frase: ");
@@ -33,11 +34,16 @@ public class Ej13 {
 		palabras = frase.toCharArray();
 		Arrays.sort(palabras);
 		
-		for(int i = 0, j = 0; i<palabras.length; i++) {
+		for(int i = 0, j = 0; i<palabras.length && fuera == false; i++) {
 			contador = 0;
-			while(palabras[i] == palabras[j]) {
+			while(palabras[i] == palabras[j] && j<palabras.length && fuera == false) {
 				contador++;
-				j++;
+				if(j==palabras.length-1) {
+					fuera = true;
+				}
+				else {
+					j++;
+				}
 			}
 			System.out.println("Hay un total de " + contador + " de la letra " + palabras[i]);
 			i = j-1;
