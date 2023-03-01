@@ -1,8 +1,8 @@
-package ejecicios;
+package ejecicios1;
 
 import java.util.Scanner;
 
-public class Ej14 {
+public class Ej15 {
 
 	public static void main(String[] args) {
 		String frase;
@@ -24,17 +24,18 @@ public class Ej14 {
 		else {
 			letras = frase.toCharArray();
 			letrasrandom = new char [letras.length];
-			int i = 0;
-			while(i<letras.length) {
+			for(int i = 0; i<letras.length; i++) {
 				int azar = (int) (Math.random()*letras.length);
 				if(letrasrandom[azar] == 0) {
 					letrasrandom[azar] = letras[i];
-					i++;
+				}
+				else {
+					i--;
 				}
 			}
 			
-			for(int j = 0; j<letrasrandom.length; j++) {
-				esarf += letrasrandom[j];
+			for(int i = 0; i<letrasrandom.length; i++) {
+				esarf += letrasrandom[i];
 			}
 			
 			System.out.println(esarf);
@@ -54,6 +55,15 @@ public class Ej14 {
 					}
 					else {
 						System.out.print("Sigue intentandolo");
+						if(adivina.compareTo(frase) > 0) {
+							System.out.println("Hay " + adivina.compareTo(frase) + " letras de más");
+						}
+						else if(adivina.compareTo(frase)<0) {
+							System.out.println("Faltan " + adivina.compareTo(frase) + " letras");
+						}
+						else {
+							System.out.println("Tienen las mismas letars");
+						}
 					}
 				}
 				else if(eleccion == 2) {

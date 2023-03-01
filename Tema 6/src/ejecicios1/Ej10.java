@@ -1,8 +1,8 @@
-package ejecicios;
+package ejecicios1;
 
 import java.util.Scanner;
 
-public class Ej9 {
+public class Ej10 {
 	
 	char codifica(char conjunto1[],char conjunto2[], char c) {
 		char codificado;
@@ -38,22 +38,15 @@ public class Ej9 {
 		frase = sc.nextLine();
 		sc.close();
 		frase = frase.toLowerCase();
-		
 		palabras = frase.split(" ");
 		
 		for(int i = 0; i<palabras.length; i++) {
 			for(int j = 0; j<palabras[i].length(); j++) {
-				palabracodificada += codifica.codifica(conjunto1, conjunto2, palabras[i].charAt(j));
+				palabracodificada += codifica.codifica(conjunto2, conjunto1, palabras[i].charAt(j));
 			}
 			frasecodificada += palabracodificada + " ";
 		}
 		
 		System.out.println("Su frase codificada es: " + frasecodificada);
-		
-		
-		
-		
-
 	}
-
 }

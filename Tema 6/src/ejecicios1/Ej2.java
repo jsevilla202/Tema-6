@@ -1,8 +1,8 @@
-package ejecicios;
+package ejecicios1;
 
 import java.util.Scanner;
 
-public class Ej2_2 {
+public class Ej2 {
 
 	public static void main(String[] args) {
 		String frase1;
@@ -18,19 +18,16 @@ public class Ej2_2 {
 		System.out.print("Adivina a contraseña: ");
 		frase2 = sc.next();
 		
-		for(int i = 0; i<frase1.length();i++) {
-			if(frase1.charAt(i)==frase2.charAt(i)) {
-				System.out.print(frase1.charAt(i));
-			}
-			else {
-				System.out.print("*");
-			}
+		if(frase1.compareTo(frase2)> 0) {
+			System.out.println("La contraseña es más larga");
 		}
-		if(frase2.equals(frase1)) {
-			System.out.println("La adivinastes!!!!");
+		else if(frase1.compareTo(frase2)< 0) {
+			System.out.println("La contraseña es más corta");
+		}
+		else {
+			System.out.println("ACERTASTES!!");
 			contraseña = false;
 		}
-		System.out.println();
 		}
 		sc.close();
 

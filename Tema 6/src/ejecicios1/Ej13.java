@@ -1,4 +1,4 @@
-package ejecicios;
+package ejecicios1;
 
 import java.text.Normalizer;
 import java.util.Arrays;
