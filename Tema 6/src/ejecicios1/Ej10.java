@@ -4,49 +4,46 @@ import java.util.Scanner;
 
 public class Ej10 {
 	
-	char codifica(char conjunto1[],char conjunto2[], char c) {
-		char codificado;
-		int i = 0;
-		boolean encontrado = false;
-		while(encontrado == false && i<conjunto1.length) {
-			if(c == conjunto1[i]) {
-				encontrado = true;
+	static char codifica(char conjunto1[],char conjunto2[], char c) {
+		int encontrado = -1;
+		char devolver;
+		
+		for(int i = 0; i<conjunto1.length && encontrado == -1; i++) {
+			if(c == conjunto1[i]){
+				encontrado = i;
 			}
-			i++;
 		}
-		if(encontrado == true) {
-			codificado = conjunto2[i-1];
+		if(encontrado != -1) {
+			devolver = conjunto2[encontrado];
 		}
 		else {
-			codificado = c;
+			devolver = c;
 		}
-		return codificado;
+		return devolver;
 	}
 
 	public static void main(String[] args) {
-		Ej9 codifica = new Ej9();
 		
 		char[] conjunto1 = {'e','i', 'k', 'm', 'p', 'q', 'r','s', 't', 'u', 'v'};
 		char[] conjunto2 = {'p','v','i', 'u', 'm', 't', 'e','r','k','q', 's'};
 		String frase;
-		String[] palabras;
-		String frasecodificada = "";
-		String palabracodificada = "";
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("Inserte la frase que desea codificar: ");
 		frase = sc.nextLine();
 		sc.close();
 		frase = frase.toLowerCase();
-		palabras = frase.split(" ");
 		
-		for(int i = 0; i<palabras.length; i++) {
-			for(int j = 0; j<palabras[i].length(); j++) {
-				palabracodificada += codifica.codifica(conjunto2, conjunto1, palabras[i].charAt(j));
-			}
-			frasecodificada += palabracodificada + " ";
+		for(int i = 0; i<frase.length(); i++) {
+			frase = frase.substring(0, i) + codifica(conjunto2, conjunto1, frase.charAt(i)) + frase.substring(i+1);
 		}
 		
-		System.out.println("Su frase codificada es: " + frasecodificada);
+		System.out.println("Su frase codificada es: " + frase);
+		
+		
+		
+		
+
 	}
+
 }
