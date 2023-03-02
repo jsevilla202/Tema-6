@@ -7,8 +7,10 @@ public class Ej3 {
 	public static void main(String[] args) {
 		String frase;
 		String esarf = "";
-		char c;
-		char uppercase;
+		String[] palabras;
+		String inicio;
+		String finalString;
+		String palabra = "";
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -17,12 +19,17 @@ public class Ej3 {
 		sc.close();
 		
 		frase = frase.toLowerCase();
-		for(int i = 1; i<frase.length(); i++) {
-			c = frase.charAt(i);
-			if(frase.charAt(i-1) == ' ') {
-			}
+		palabras = frase.split(" ");
+		esarf += palabras[0];
+		for(int i = 1; i<palabras.length; i++) {
+			palabra = "";
+			inicio = palabras[i].substring(0, 1);
+			finalString = palabras[i].substring(1);
+			inicio = inicio.toUpperCase();
+			palabra += inicio+finalString;
+			esarf += palabra;
 		}
-		System.out.println(frase);
+		System.out.println(esarf);
 
 	}
 
